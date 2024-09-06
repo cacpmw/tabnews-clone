@@ -16,6 +16,7 @@ async function query(queryString) {
     return result;
   } catch (error) {
     console.log(error);
+    throw error;
   } finally {
     //this certifies db connection is closed no matter what
     await client.end();
