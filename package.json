@@ -4,7 +4,9 @@
   "description": "A clone for the tabnews.com.br for study purposes",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run docker:up && next dev",
+    "docker:up": "docker compose -f infra/compose.yaml up -d",
+    "docker:down": "docker compose -f infra/compose.yaml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test:watch": "jest --watchAll",
